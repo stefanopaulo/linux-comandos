@@ -88,7 +88,7 @@
 
     $ mkdir nome_da_pasta
 
-  - **Apagando diretórios vazios e arquivos**
+  - **Apagando diretórios vazios**
 
     $ rmdir nome_da_pasta
 
@@ -127,3 +127,91 @@
     ​	na flag **-rf** o **r** é de recursivo, isso significa que primeiro será excluído tudo 	de dentro do diretório e depois o diretório em si. 
 
     ​	o **f** é de **force**, significa que é para forçar a execução do comando, nesse 	caso, a remoção do diretório.
+  
+- **Compactando e descompactando arquivos**
+
+  - **Compactar arquivos e diretórios**
+
+    $ tar -cvf nome_compactado.tar arquivo
+
+  - **Descompactando arquivos e diretórios**
+
+    $ tar -xvf nome_compactado.tar
+
+- **Alguns comandos de rede**
+
+  - **Listar todas as configurações de rede**
+
+    $ ifconfig
+
+  - **Verificar a rota que o pacote vai fazer**
+
+    $ traceroute _ip_
+
+    ​	_**ex:** traceroute www.google.com_
+
+  - **Retornar o ip de um dns**
+
+    $ nslookup _dns_
+
+    ​	_**ex:** nslookup www.google.com_
+
+  - **Mostrar todas as conexões de rede do dispositivo**
+
+    $ netstat
+
+  - **Arquivo de configuração de rede**
+
+    $ cd /etc/network
+
+    _arquivo **interfaces**_
+
+  - **Ativando placa de rede**
+
+    $ ifconfig eth1 up
+
+  - **Desativando placa de rede**
+
+    $ ifconfig eth1 down
+
+  - **Reiniciar serviço de rede**
+
+    $ /etc/init.d/networking restart
+
+    ​	_necessário sempre que o arquivo **interfaces** é alterado_
+
+  - **Adicionando rotas**
+
+    $ route add default gw 10.0.0.1
+
+    ​	_ip de exemplo_
+
+  - **Verificar se o encaminhamento de pacotes está habilitado**
+
+    $ vim /etc/sysctl.conf
+
+    ​	_descomentar a linha: net.ipv4.ip_foward=1_
+
+  - **Adicionando roteamento**
+
+    $ route add -net _ip_ -netmask _ip_ gw _ip_
+
+- **Aplicativos para fazer instalação de novos pacotes**
+
+  - **apt-get install**
+
+  - **apt install**
+
+  - **Desinstalar pacotes**
+
+    $ apt-get remove nome_do_pacote
+
+  - **Pesquisar um pacote**
+
+    $ apt-cache search nome_do_pacote
+
+  - **yum**
+
+    para pacote .npm.
+
+    geralmente usado no centOS.
